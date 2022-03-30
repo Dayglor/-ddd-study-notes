@@ -17,3 +17,16 @@ DDD - Domain Driven Design
         Core Domain
         Support Subdomain 
         Generic Subdomain
+
+    - Bounded Contexts -  Contexto Delimitado
+        É uma divisão explicita dentro de um modelo. E dentroro desse contexto, existe uma linguagem especifica mencionada.
+
+    - Contexto
+        Palavras iguais que representam coisas diferentes, muito provavelmente estão em contextos diferentes.
+        Exemplo: 
+            Serviço de vendas tem um módulo de tickets
+            Serviço de suporte ao cliente também tem um módulo de tickets.
+
+            Ambas as palavras "tickets" são iguais, mas em contextos diferentes.
+        
+    
