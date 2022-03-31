@@ -29,4 +29,14 @@ DDD - Domain Driven Design
 
             Ambas as palavras "tickets" são iguais, mas em contextos diferentes.
         
-    
+    - Context Mapping
+        https://github.com/ddd-crew/context-mapping
+
+    - Entities (Não é entidade de ORM)
+        "Algo único capaz de ser alterado de forma contínua por um longo período de tempo"
+        Vernon Vaughn.
+        Entidade = Identidade
+        Entidade anemica = Entidade que só trafega dados        
+        A entidade sempre deve se auto validar para manter os dados consistentes
+
+        Entidades no DDD são focadas no negócio e suas regras, entidades do TypeORM que são para persistência no banco.
