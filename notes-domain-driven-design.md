@@ -40,3 +40,7 @@ DDD - Domain Driven Design
         A entidade sempre deve se auto validar para manter os dados consistentes
 
         Entidades no DDD são focadas no negócio e suas regras, entidades do TypeORM que são para persistência no banco.
+        A entidade basicamente é uma classe que controla a sua regra de negócio.
+
+        - Regra de negócio: Basicamente é o comportamento esperado pelo sistema.
+        Uma entidade precisa SEMPRE se validar para manter a integridade dos dados
