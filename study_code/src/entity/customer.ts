@@ -2,13 +2,14 @@ import Address from "./address";
 
 export default class Customer {
 
-    _id: string;
-    _name: string;
-    _email: string;
-    _address!: Address;
-    _active: boolean;
+    private _id: string;
+    private _name: string;
+    private _email: string;
+    private _address!: Address;
+    private _active: boolean;
 
-    constructor(id: string,name: string,email: string,address: string) {
+    constructor(id: string, name: string,email: string) {
+        console.log(`constructor ${name}`)
         this._id = id;
         this._name = name;
         this._email = email
@@ -18,17 +19,24 @@ export default class Customer {
     }
 
     validate(): void {
+        console.log('name: ', this._name);
+        console.log(this._name)
+
+        if(this._id === '') {
+            throw new Error('Customer id is required')
+        }
+
         if(this._name.length <= 0){
-            throw new Error('Name is required')
+            throw new Error('Customer name is required')
         }
 
         if(this._email.length <= 0){
-            throw new Error('Email is required')
+            throw new Error('Customer email is required')
         }
 
-        if(this._address.length <= 0){
-            throw new Error('Address is required')
-        }
+        // if(this._address.length <= 0){
+        //     throw new Error('Address is required')
+        // }
     }
 
     get id(): string {
@@ -51,13 +59,17 @@ export default class Customer {
         this._address = address;
     }
 
+    isActive(): boolean {
+        return this._active;
+    }
+
     changeAddress(address: Address): void {
         this._address = address;
     }
 
     activate(): void {
         if(!this._address){
-            throw new Error('Address is required')
+            throw new Error('Customer address is required')
         }
         this._active = true;
     }
@@ -71,9 +83,3 @@ export default class Customer {
         this.validate();
     }
 }
-
-let customer = new Customer('1','','fdafds@gd.com','asdfasdf');
-console.log(customer.name);
-
-let customer2 = new Customer('2','maria','emai','asdfasdf');
-console.log(customer2.name);
