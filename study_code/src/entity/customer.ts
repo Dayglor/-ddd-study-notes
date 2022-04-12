@@ -51,6 +51,10 @@ export default class Customer {
         this._address = address;
     }
 
+    changeAddress(address: Address): void {
+        this._address = address;
+    }
+
     activate(): void {
         if(!this._address){
             throw new Error('Address is required')
