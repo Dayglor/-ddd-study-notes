@@ -1,16 +1,18 @@
+import Address from "./address";
+
 export default class Customer {
 
     _id: string;
     _name: string;
     _email: string;
-    _address: string;
+    _address!: Address;
     _active: boolean;
 
     constructor(id: string,name: string,email: string,address: string) {
         this._id = id;
         this._name = name;
         this._email = email
-        this._address = address;
+        // this._address = address;
         this._active = false;
         this.validate();
     }
@@ -42,11 +44,15 @@ export default class Customer {
     }
 
     get address(): string {
-        return this._address
+        return this._address.toString();
+    }
+
+    set Address(address: Address) {
+        this._address = address;
     }
 
     activate(): void {
-        if(this._address.length <= 0){
+        if(!this._address){
             throw new Error('Address is required')
         }
         this._active = true;
@@ -64,3 +70,6 @@ export default class Customer {
 
 let customer = new Customer('1','','fdafds@gd.com','asdfasdf');
 console.log(customer.name);
+
+let customer2 = new Customer('2','maria','emai','asdfasdf');
+console.log(customer2.name);
