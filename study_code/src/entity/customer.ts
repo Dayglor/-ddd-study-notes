@@ -9,7 +9,6 @@ export default class Customer {
     private _active: boolean;
 
     constructor(id: string, name: string,email: string) {
-        console.log(`constructor ${name}`)
         this._id = id;
         this._name = name;
         this._email = email
@@ -19,8 +18,6 @@ export default class Customer {
     }
 
     validate(): void {
-        console.log('name: ', this._name);
-        console.log(this._name)
 
         if(this._id === '') {
             throw new Error('Customer id is required')
