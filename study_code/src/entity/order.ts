@@ -11,10 +11,10 @@ export default class Order {
 
   validate(): void {
     if(this.customerId.length < 10) {
-        throw new Error("Customer is required");
+        throw new Error("Customer is required and must be greater than 10 characters");
     }
     if(this.id.length < 10) {
-        throw new Error("Order id is required");
+        throw new Error("Order id is required and must be greater than 10 characters");
     }
     if (this.items.length === 0) {
       throw new Error("Order must have at least one item");
