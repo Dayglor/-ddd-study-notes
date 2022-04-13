@@ -19,6 +19,10 @@ export default class Order {
     if (this.items.length === 0) {
       throw new Error("Order must have at least one item");
     }
+
+    if(this.items.some(item => item.quantity < 1)) {
+        throw new Error("OrderItem quantity must be greater than 0");
+    }
   }
 
   get totalPrice (): number {
